@@ -18,6 +18,10 @@ function! Send_keys_to_Tmux(keys)
   call system("tmux send-keys -t " . s:tmux_target() . " " . a:keys)
 endfunction
 
+function! SendKeysToTmux(keys)
+  call Send_keys_to_Tmux(a:keys)
+endfunction
+
 " Main function.
 " Use it in your script if you want to send text to a tmux session.
 function! Send_to_Tmux(text)
@@ -60,8 +64,7 @@ function! Tmux_Pane_Numbers(A,L,P)
 endfunction
 
 function! s:TmuxSessions()
-  let sessions = system("tmux list-sessions | sed -e 's/:.*$//'")
-  return sessions
+  return system("tmux list-sessions | sed -e 's/:.*$//'")
 endfunction
 
 function! s:TmuxWindows()
