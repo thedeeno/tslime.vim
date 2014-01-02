@@ -15,7 +15,7 @@ function! SendKeysToTmux(keys)
     call <SID>TmuxVars()
   end
 
-  call <SID>ExecuteKeys(k)
+  call <SID>ExecuteKeys(a:keys)
 endfunction
 
 function! s:ExecuteKeys(keys)
