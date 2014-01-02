@@ -31,6 +31,10 @@ paste to pane 0 of the window.
 
 		:Tmux ls
 
+:TmuxKeys {args}		 :TmuxKeys
+		Command to send args to tmux.
+
+		:TmuxKeys ls
 
 SendToTmux({text})		 *Send_To_Tmux()* *SendToTmux()*
 		Function to send args to tmux.
